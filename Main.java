@@ -1,4 +1,4 @@
-package actividad4;
+package actividad4_updated;
 
 import java.util.Scanner;
 
@@ -16,51 +16,57 @@ public class Main {
 		
 		Scanner scan=new Scanner(System.in);
 		try {
-			System.out.println("+++++++++++Actividad 4+++++++++++");
-			System.out.println("Que figura desea evaluar?");
-			System.out.println("1. Cuadrado\n2. Circulo");
-			int choice=scan.nextInt();
-			switch(choice) {
-			case 1:
-				System.out.println("Cual es el largo del cuadrado?");
-				float lenght=scan.nextFloat();
-				CUADRADO c1=new CUADRADO(lenght);
-				//
-				System.out.println("Que desea calcular?\n1. Area\n2. Perimetro\n3. Diagonal");
-				int calculo=scan.nextInt();
-				if(calculo==1) {
-					System.out.println("Area: "+ c1.impresionArea());
+			while (true) {
+					System.out.println("+++++++++++Actividad 4+++++++++++");
+					System.out.println("Que figura desea evaluar?");
+					System.out.println("1. Cuadrado\n2. Circulo\n3. Exit");
+					int choice=scan.nextInt();
+					switch(choice) {
+					case 1:
+						System.out.println("Cual es el largo del cuadrado?");
+						float lenght=scan.nextFloat();
+						CUADRADO c1=new CUADRADO(lenght);
+						//
+						System.out.println("Que desea calcular?\n1. Area\n2. Perimetro\n3. Diagonal");
+						int calculo=scan.nextInt();
+						if(calculo==1) {
+							System.out.println("Area: "+ c1.impresionArea());
+						}
+						else if(calculo==2) {
+							System.out.println("Perimetro: "+c1.impresionPerimetro());
+						}
+						else if(calculo==3) {
+							System.out.println("Diagonal: "+c1.impresionDiagonal());
+						}
+						break;
+						
+					case 2:
+						System.out.println("Cual es el radio?");
+						float radio=scan.nextFloat();
+						CIRCULO c2=new CIRCULO(radio);
+						System.out.println("Que desea calcular?\n1. Area\n2. Circunferencia");
+						calculo=scan.nextInt();
+						if(calculo==1) {
+							System.out.println("Area: "+ c2.impresionArea());
+						}
+						else if(calculo==2) {
+							System.out.println("Perimetro: "+c2.impresionCircunferencia());
+						}
+						break;
+					case 3:
+						System.out.println("Exiting....");
+						System.exit(0);
+						break;
+					default:
+						System.out.println("That isnt an option....");
+						break;
+						
+					}
 				}
-				else if(calculo==2) {
-					System.out.println("Perimetro: "+c1.impresionPerimetro());
-				}
-				else if(calculo==3) {
-					System.out.println("Diagonal: "+c1.impresionDiagonal());
-				}
-				break;
 				
-			case 2:
-				System.out.println("Cual es el radio?");
-				float radio=scan.nextFloat();
-				CIRCULO c2=new CIRCULO(radio);
-				System.out.println("Que desea calcular?\n1. Area\n2. Circunferencia");
-				calculo=scan.nextInt();
-				if(calculo==1) {
-					System.out.println("Area: "+ c2.impresionArea());
-				}
-				else if(calculo==2) {
-					System.out.println("Perimetro: "+c2.impresionCircunferencia());
-				}
-				break;
-			default:
-				System.out.println("That isnt an option....");break;
 			}
-		}
 		finally {
 			scan.close();
 		}
-		
-		
-		
 	}
 }
