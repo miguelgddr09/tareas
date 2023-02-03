@@ -52,10 +52,10 @@ public class Main_exam {
 					System.out.println("");
 					break;
 				case 6:
-					
-				default: 
 					System.out.println("Exiting...");
 					System.exit(0);
+				default: 
+					System.out.println("That isnt an option...");
 					break;
 				}
 			}
