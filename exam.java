@@ -1,9 +1,7 @@
 package primer_examen_parcial;
 
 public class exam {
-	char indexfirst;
-	;
-	
+
 	public String primeraMayuscula(String frase) { 
 		String cap=frase.substring(0,1).toUpperCase();
 		String fraseMayus=cap+frase.substring(1);
