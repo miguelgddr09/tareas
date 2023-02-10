@@ -1,72 +1,30 @@
-package actividad4_updated;
-
-import java.util.Scanner;
+package working_arrays;
 
 public class Main {
-	public static void main(String[] args) {
-		/*
-		 * Crea un método main en el cual le preguntes al usuario que figura quiere
-		 * hacer si un círculo o un cuadrado. 
-		 * Después, pregunta que largo tiene ya sea
-		 * el radio o el lado dependiendo de tu figura. 
-		 * Por último, pregunta si desea calcular la diagonal, perímetro, área 
-		 * o circunferencia dependiendo también
-		 * de tu figura.
-		 * */
+	public static void main (String[] args) {
 		
-		Scanner scan=new Scanner(System.in);
-		try {
-			while (true) {
-					System.out.println("+++++++++++Actividad 4+++++++++++");
-					System.out.println("Que figura desea evaluar?");
-					System.out.println("1. Cuadrado\n2. Circulo\n3. Exit");
-					int choice=scan.nextInt();
-					switch(choice) {
-					case 1:
-						System.out.println("Cual es el largo del cuadrado?");
-						float lenght=scan.nextFloat();
-						CUADRADO c1=new CUADRADO(lenght);
-						//
-						System.out.println("Que desea calcular?\n1. Area\n2. Perimetro\n3. Diagonal");
-						int calculo=scan.nextInt();
-						if(calculo==1) {
-							System.out.println("Area: "+ c1.impresionArea());
-						}
-						else if(calculo==2) {
-							System.out.println("Perimetro: "+c1.impresionPerimetro());
-						}
-						else if(calculo==3) {
-							System.out.println("Diagonal: "+c1.impresionDiagonal());
-						}
-						break;
-						
-					case 2:
-						System.out.println("Cual es el radio?");
-						float radio=scan.nextFloat();
-						CIRCULO c2=new CIRCULO(radio);
-						System.out.println("Que desea calcular?\n1. Area\n2. Circunferencia");
-						calculo=scan.nextInt();
-						if(calculo==1) {
-							System.out.println("Area: "+ c2.impresionArea());
-						}
-						else if(calculo==2) {
-							System.out.println("Perimetro: "+c2.impresionCircunferencia());
-						}
-						break;
-					case 3:
-						System.out.println("Exiting....");
-						System.exit(0);
-						break;
-					default:
-						System.out.println("That isnt an option....");
-						break;
-						
-					}
-				}
-				
-			}
-		finally {
-			scan.close();
-		}
+		int[] arrayFifteen=new int[15];
+		String[] namesArray=new String[20];
+		CIRCULO obj[]=new CIRCULO[100];
+		
+		namesArray[0]="Fransisco";
+		arrayFifteen[9]=5;
+		
+		Method obj1=new Method();
+		
+		System.out.println("Busquedda de int en array...");
+		obj1.busquedaArrayI(5, arrayFifteen);
+		System.out.println("Busquedda de Strings en array...");
+		obj1.busquedaArrayS("Fransisco", namesArray);
+		System.out.println("Mostrando los elementos de un arreglo de Strings....");
+		obj1.impresionArrayS(namesArray);
+		System.out.println("Mostrando los elementos de un arreglo de ints....");
+		obj1.impresionArrayI(arrayFifteen);
+		System.out.println("Eliminar elemento de array de ints....");
+		obj1.eliminacionArrayI(5, arrayFifteen);
+		obj1.impresionArrayI(arrayFifteen);
+		System.out.println("Fin....");
 	}
+	
+	
 }
